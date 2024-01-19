@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents</title>
+    <link rel="stylesheet" href="parent.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>CAMPUS AWAITS YOUR VISIT</h1>
+        <h1>PLEASE REGISTER YOUR VEHICLE HERE</h1>
+
+        <div class="form-container">
+            <form id="registrationForm">
+                <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Enter student name">
+
+                <label for="rollNo">Student Roll No:</label>
+                <input type="text" id="rollNo" name="rollNo" placeholder="Enter student roll number"> <!-- Added required attribute -->
+    
+                <label for="vehicleNumber">Vehicle Number:</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" placeholder="Enter vehicle number"> <!-- Added required attribute -->
+                <label for="proofDocument">Upload Proof of Relationship:</label>
+                    <input type="file" id="proofDocument" name="proofDocument" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>You have successfully submitted the details. Thank you!</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            if (this.checkValidity()) { // Check if the form is valid
+                showPopup(); // Show the custom popup
+                this.reset(); // Reset the form
+            }
+        });
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="styles.css">
+    <title>Vehicle Vision</title>
+</head>
+<body>
+    <div class="header">
+        <h1>WELCOME TO VEHICLE VISION</h1>
+    </div>
+
+    <div class="form-container">
+        <!-- <p>Who are you?</p> -->
+        <button id="student">STUDENT</button>
+        <button id="parent">VISITOR</button>
+    </div>
+    <script>
+        document.getElementById('student').addEventListener('click', function() {
+            // Add action for student button
+            window.location.href = 'loginlogin.html'; // Redirect to student page
+        });
+    
+        document.getElementById('parent').addEventListener('click', function() {
+            // Add action for parent button
+            window.location.href = 'parent.html'; // Redirect to parent page
+        });
+    
+        document.getElementById('faculty').addEventListener('click', function() {
+            // Add action for faculty button
+            window.location.href = 'faculty_page.html'; // Redirect to faculty page
+        });
+    </script>
+    
+</body>
+</html>

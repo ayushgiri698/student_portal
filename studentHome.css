@@ -1,0 +1,198 @@
+body{
+    background-image: url('tiet.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+nav{
+ position: fixed;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 75px;
+ background: #000000;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav .navbar{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 100%;
+ max-width: 90%;
+ background: #000000;
+ margin: auto;
+}
+nav .navbar .logo a{
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu{
+  display: flex;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+#Home > .homediv:first-child {
+    margin-top: 260px; /* Adjust this value as needed */
+  }
+  
+
+
+section{
+  display: block;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #da1515;
+  font-size: 60px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  text-decoration: solid;
+  font-weight: bolder;
+}
+.homediv{
+  background-color: rgb(0, 0, 0);
+  width: 100% !important;
+  text-align: center; /* Example alignment, adjust as needed */
+  margin-bottom: 215px;
+}
+.homediv2{
+    background-color: rgb(0, 0, 0);
+    width: 100% !important;
+    text-align: center; /* Example alignment, adjust as needed */
+    margin-top: 285px;
+       
+}
+.homediv2 h2 {
+    color: #ff0000; /* Red color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+
+  .homediv2 form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center align form elements */
+  }
+
+  .homediv2 label {
+    margin-bottom: 10px; /* Space below each label */
+    color: #fff; /* White label text */
+    font-weight: bold; /* Bold font for labels */
+  }
+  .homediv2 select, .homediv2 input[type="submit"] {
+    width: 50%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below each input */
+    border: 1px solid #ff0000; /* Red border for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    background-color: #fff; /* White background for inputs */
+    color: #000; /* Black text for inputs */
+  }
+
+  homediv2 input[type="submit"] {
+    background-color: #ff0000; /* Red background for submit button */
+    color: #fff; /* White text for submit button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  .homediv2 input[type="submit"]:hover {
+    background-color: #cc0000; /* Darker red on hover */
+  }
+  .homediv2 button {
+    padding: 20px; /* Padding inside button */
+    margin-bottom: 15px; /* Space below the button */
+    border: 1px solid #ff0000; /* Red border for button */
+    border-radius: 5px; /* Rounded corners for button */
+    background-color: #ff0000; /* Red background for button */
+    color: #fff; /* White text for button */
+    font-weight: bold; /* Bold font for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.homediv2 button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+  
+#totalAmount {
+    color: #ff0000; /* Red color for total amount */
+    font-weight: bold; /* Bold font for total amount */
+  }
+
+
+.button a{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #2980b9;
+  padding: 7px 12px;;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.qr-popup {
+  z-index: 10;
+  position: fixed;
+  left: 50%;
+  top: 80%;
+  width: 50%;
+  height: 100%;
+  background:transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.qr-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.close-btn {
+  float: right;
+  font-size: 30px;
+  cursor: pointer;
+}
+.blur-effect {
+  filter: blur(5px);
+}
+

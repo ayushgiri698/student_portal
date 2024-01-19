@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home</title>
+    <link rel="stylesheet" href="studentHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="blur-overlay" id="mainContent"></div>
+    <nav>
+        <div class="navbar">
+          <div class="logo"><a href="#">VEHICLE VISION</a></div>
+          <ul class="menu">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">Parking Pass</a></li>
+            <!-- <li><a href="#Category">Check Dues</a></li> -->
+          </ul>
+        </div>
+      </nav>
+      <section id="Home">
+        <div class="homediv">
+            <h4> SAY GOODBYE TO PARKING PAYMENT HASSLES  <h4 style="color: #fff; font-weight: bold;">GO AUTOMATED AND SMOOTH!</h4> </h4>
+        </div>
+        <div class="homediv">
+            <h4> What do we offer? </h4>
+            <p style="color: #fff; /* White label text */
+            font-weight: bold;"> We offer a fully automated parking system that allows you to pay for your parking pass online </p>
+        </div>
+      </section>
+
+      <section id="About">
+        <div class="homediv2">
+        <h2>PARKING PASS FORM</h2>
+        <form id="parkingPassForm">
+          <label for="months">Select Duration (Months):</label>
+          <select id="months" name="months">
+            <option value="1">1 Month</option>
+            <option value="2">2 Months</option>
+            <option value="3">3 Months</option>
+            <option value="4">4 Months</option>
+            <option value="5">5 Months</option>
+            <option value="6">6 Months</option>
+            <!-- Add more options as needed -->
+          </select>
+
+          
+          <p>Total Amount: <span id="totalAmount">₹500</span></p>
+          <!-- Payment Option Placeholder -->
+          <p><button type="submit">Pay Now</button></p>
+        </form>
+        </div>
+      </section>
+      
+      <!-- <section id="Category">Category Section</section> -->
+
+      <div class="button">
+        <a href="#Home"><i class="fas fa-arrow-up"></i></a>
+      </div>
+
+      
+      <div id="qrPopup" class="qr-popup" style="display: none;">
+        <div class="qr-content">
+            <span class="close-btn">&times;</span>
+            <img id="qrImage" src="qr.png" alt="QR Code" style="width: 150px; height: 150px;">
+            <p style="color: rgb(161, 34, 34); font-size: medium;">Scan this QR code to proceed with payment.</p>
+        </div>
+
+      </div>
+      <script>
+       
+       document.addEventListener('DOMContentLoaded', (event) => {
+    console.log("Document fully loaded. Adding event listeners...");
+
+    document.getElementById('months').addEventListener('change', function() {
+        var pricePerMonth = 500;
+        var months = this.value;
+        var totalAmount = pricePerMonth * months;
+        document.getElementById('totalAmount').textContent = '₹' + totalAmount;
+    });
+
+    document.getElementById('parkingPassForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting
+        console.log("Form submitted. Showing QR popup...");
+
+        var qrPopup = document.getElementById('qrPopup');
+        var qrImage = document.getElementById('qrImage');
+
+        // Generate a random QR code - For demonstration, using a placeholder image
+        //qrImage.src = "https://via.placeholder.com/150?text=QR+Code";
+        qrPopup.style.display = 'block'; // Show the popup
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', function() {
+        console.log("Closing QR popup...");
+        document.getElementById('qrPopup').style.display = 'none';
+    });
+
+    document.getElementById('parkingPassForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        var mainContent = document.getElementById('mainContent');
+        var qrPopup = document.getElementById('qrPopup');
+
+        // Show QR popup and apply blur effect
+        qrPopup.style.display = 'block';
+        mainContent.classList.add('blur-effect');
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', function() {
+        var mainContent = document.getElementById('mainContent');
+        var qrPopup = document.getElementById('qrPopup');
+
+        // Hide QR popup and remove blur effect
+        qrPopup.style.display = 'none';
+        mainContent.classList.remove('blur-effect');
+    });
+
+});
+
+      </script>
+      
+</body>
+</html>
